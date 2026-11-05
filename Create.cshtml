@@ -1,0 +1,38 @@
+@model WebApp.Models.Sneaker
+
+<h2>Добавить новые кроссовки</h2>
+
+<form asp-action="Create" method="post">
+    <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Brand" class="form-label">Бренд</label>
+        <input asp-for="Brand" class="form-control" />
+        <span asp-validation-for="Brand" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="ModelName" class="form-label">Модель</label>
+        <input asp-for="ModelName" class="form-control" />
+        <span asp-validation-for="ModelName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Size" class="form-label">Размер</label>
+        <input asp-for="Size" class="form-control" type="number" />
+        <span asp-validation-for="Size" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Price" class="form-label">Цена</label>
+        <input asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+    <a asp-action="Index" class="btn btn-secondary">Назад к списку</a>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
