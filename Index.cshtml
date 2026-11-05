@@ -1,0 +1,26 @@
+@model IEnumerable<WebApp.Models.Sneaker>
+
+<h2>Каталог кроссовок</h2>
+<a asp-action="Create" class="btn btn-success mb-3">Добавить модель</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Бренд</th>
+            <th>Модель</th>
+            <th>Размер</th>
+            <th>Цена</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Brand</td>
+                <td>@item.ModelName</td>
+                <td>@item.Size</td>
+                <td>@item.Price.ToString("C")</td>
+            </tr>
+        }
+    </tbody>
+</table>
